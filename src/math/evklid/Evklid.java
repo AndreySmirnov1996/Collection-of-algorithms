@@ -1,4 +1,9 @@
-package evklid;
+package math.evklid;
+
+/**
+ *      Алгоритм Евклида
+ *  Поиск НОД для пары чисел
+ */
 
 public class Evklid {
 

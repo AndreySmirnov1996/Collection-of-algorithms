@@ -1,4 +1,4 @@
-package quick_sort;
+package sort.quick_sort;
 
 public class QuickSort {
     static int[] array = {1, 76, 88, 33, 99, 5, 2};

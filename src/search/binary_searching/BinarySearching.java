@@ -1,8 +1,13 @@
-package binary_searching;
+package search.binary_searching;
+
+/**
+ *      Бинарный поиск
+ *  Сложность алгоритма O(log(n))
+ */
 
 public class BinarySearching {
 
-    private static int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private static int[] list = {11, 22, 33, 44, 55, 66, 77, 88, 99};
 
     public static void main(String[] args) {
         System.out.println(binarySearching(list,12));
