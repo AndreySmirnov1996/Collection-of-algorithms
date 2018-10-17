@@ -1,1 +1,1 @@
-# ejc2018
+# collection of algoritms
