@@ -1,29 +1,27 @@
-package sort.quick_sort;
+package sorts;
+
+import java.util.Arrays;
+
+/**
+ * Быстрая сортировка:
+ * Сложность алгоритма O(n*log(n))
+ */
 
 public class QuickSort {
-    static int[] array = {1, 76, 88, 33, 99, 5, 2};
+    private static int[] array = {1, 76, 88, 33, 99, 5, 2};
 
-
-    public static final void main(String[] args) {
-        printArray();
+    public static void main(String[] args) {
         quickSort();
-        printArray();
+        System.out.println(Arrays.toString(array));
     }
 
-    public static void printArray() {
-        for (int i = 0; i < array.length - 1; i++) {
-            System.out.print(array[i] + ", ");
-        }
-        System.out.println(array[array.length - 1]);
-    }
-
-    public static void quickSort() {
+    private static void quickSort() {
         int startIndex = 0;
         int endIndex = array.length - 1;
         doSort(startIndex, endIndex);
     }
 
-    public static void doSort(int start, int end) {
+    private static void doSort(int start, int end) {
         if (start >= end) {
             return;
         }

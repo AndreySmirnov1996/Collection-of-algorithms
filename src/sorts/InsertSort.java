@@ -1,12 +1,16 @@
-package sort.insert_sort;
+package sorts;
 
 import java.util.Arrays;
+
+/**
+ * Сортировка вставками:
+ * Сложность алгоритма O(n^2)
+ */
 
 public class InsertSort {
 
     public static void main(String[] args) {
-        int[] arr = {3, 2, 1, 55, 6, 33, 5, 66,};
-        System.out.println(Arrays.toString(arr));
+        int[] arr = {3, 2, 1, 55, 40, 33, 5, 66,};
         insertSort(arr);
         System.out.println(Arrays.toString(arr));
     }
