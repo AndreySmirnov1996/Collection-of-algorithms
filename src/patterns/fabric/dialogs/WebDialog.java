@@ -7,6 +7,9 @@ public class WebDialog extends Dialog {
     @Override
     public void renderWindow() {
         System.out.println("Render window of web dialog");
+        Button button = createButton();
+        button.onClick(); //do something
+        button.render();
     }
 
     @Override
