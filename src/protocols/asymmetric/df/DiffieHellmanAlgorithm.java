@@ -18,7 +18,7 @@ public class DiffieHellmanAlgorithm {
         // Generate Alice (a) and Bob (b) big random numbers
         int a = 6;
         int b = 15;
-        println(String.format("Generate Alice (a) and Bob (b) prime numbers: a = %d ; b = %d", a, b));
+        println(String.format("Generate Alice (a) and Bob (b) secret keys: a = %d ; b = %d", a, b));
         println("---------------------------");
 
         int A = (int) (Math.pow(g, a) % p);
