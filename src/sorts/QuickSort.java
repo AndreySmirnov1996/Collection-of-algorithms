@@ -2,22 +2,23 @@ package sorts;
 
 import java.util.Arrays;
 
+import static sorts.AbstractSort.ARRAY;
+
 /**
  * Быстрая сортировка:
  * Сложность алгоритма O(n*log(n))
  */
 
 public class QuickSort {
-    private static int[] array = {1, 76, 88, 33, 99, 5, 2};
 
     public static void main(String[] args) {
         quickSort();
-        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(ARRAY));
     }
 
     private static void quickSort() {
         int startIndex = 0;
-        int endIndex = array.length - 1;
+        int endIndex = ARRAY.length - 1;
         doSort(startIndex, endIndex);
     }
 
@@ -30,16 +31,16 @@ public class QuickSort {
         int cur = (i + j) / 2;
 
         while (i < j) {
-            while (i < cur && (array[i] <= array[cur])) {
+            while (i < cur && (ARRAY[i] <= ARRAY[cur])) {
                 i++;
             }
-            while (j > cur && (array[cur] <= array[j])) {
+            while (j > cur && (ARRAY[cur] <= ARRAY[j])) {
                 j--;
             }
             if (i < j) {
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                int temp = ARRAY[i];
+                ARRAY[i] = ARRAY[j];
+                ARRAY[j] = temp;
                 if (i == cur)
                     cur = j;
                 else if (j == cur)
