@@ -1,7 +1,7 @@
 package search.binary_searching;
 
 /**
- *      Бинарный поиск
+ *  Бинарный поиск
  *  Сложность алгоритма O(log(n))
  */
 
@@ -10,24 +10,31 @@ public class BinarySearching {
     private static final int[] SORTED_LIST = {11, 22, 33, 44, 55, 66, 77, 88, 99};
 
     public static void main(String[] args) {
-        System.out.println(binarySearching(SORTED_LIST,12));
+        System.out.println(binarySearching(SORTED_LIST,99));
     }
 
-    private static boolean binarySearching(int[] array, int search) {
-        int first = 0;
-        int last = array.length - 1;
-        int middle = (first + last) / 2;
+    private static int binarySearching(int[] sortedArray, int seekElement) {
 
-        while (first <= last) {
-            if (array[middle] < search) {
-                first = middle + 1;
-            } else if (array[middle] == search) {
-                return true;
-            } else {
-                last = middle - 1;
+        int startIndex = 0;
+        int endIndex = sortedArray.length - 1;
+
+        while (startIndex <= endIndex) {
+            final int middleIndex = (startIndex + endIndex) / 2;
+
+            // Если мы нашли искомый элемент, просто возвращаем его индекс.
+            if (sortedArray[middleIndex] == seekElement) {
+                return middleIndex;
             }
-            middle = (first + last) / 2;
+
+            // Решаем, какую половину исследовать дальше:
+            // правую (если искомый элемент БОЛЬШЕ выбранного среднего) или
+            // левую (если искомый элемент МЕНЬШЕ выбранного среднего).
+            if (sortedArray[middleIndex] < seekElement) {
+                startIndex = middleIndex + 1;
+            }  else {
+                endIndex = middleIndex - 1;
+            }
         }
-        return false;
+        return -1;
     }
 }
